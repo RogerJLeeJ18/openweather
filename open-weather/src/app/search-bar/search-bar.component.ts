@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ForecasterService } from '../forecaster.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
   searchCity: string = 'Austin';
-  constructor() { }
+  forecast: Array<{ number: number, city: string, lowTemp: number }> = [];
+  constructor(private forecasterService: ForecasterService) { }
 
   ngOnInit() {
+    this.getForecast();
+  }
+  getForecast() {
+    this.forecasterService
+      .getForecast(this.searchCity)
+      .subscribe((data) => {
+        
+        console.log('Data requested ... ');
+        console.log(data);
+      });
   }
 
 }
