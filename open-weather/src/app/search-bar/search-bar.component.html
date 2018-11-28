@@ -4,7 +4,7 @@
       Open Weather
     </div>
     <div class="col-md-5">
-      <input type="city" class="form-control" id="exampleInputCity" />
+      <input #searchBox id="search-box" class="form-control" (keyup.enter)="search(searchBox.value)" />
     </div>
     <div class="col-md-4">
     </div>

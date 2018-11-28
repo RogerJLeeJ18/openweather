@@ -1,4 +1,3 @@
-{{testTitle}}
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
@@ -28,102 +27,122 @@
         <tbody>
           <tr>
             <td>
-              1
+              {{forecasts[0].day | json}}
             </td>
             <td>
-              TB - Monthly
+              {{forecasts[0].conditions | json}}
             </td>
             <td>
-              01/04/2012
+              {{forecasts[0].high | json}}
             </td>
             <td>
-              Default
+              {{forecasts[0].low | json}}
             </td>
             <td>
-              01/04/2012
+              {{forecasts[0].precip | json}}
             </td>
             <td>
-              Default
+              {{forecasts[0].humidity | json}}
             </td>
           </tr>
           <tr class="table-active">
             <td>
-              1
+              {{forecasts[1].day | json}}
             </td>
             <td>
-              TB - Monthly
+              {{forecasts[1].conditions | json}}
             </td>
             <td>
-              01/04/2012
+              {{forecasts[1].high | json}}
             </td>
             <td>
-              Approved
+              {{forecasts[1].low | json}}
             </td>
             <td>
-              01/04/2012
+              {{forecasts[1].precip | json}}
             </td>
             <td>
-              Approved
+              {{forecasts[1].humidity | json}}
             </td>
           </tr>
           <tr class="table-success">
             <td>
-              2
+              {{forecasts[2].day | json}}
             </td>
             <td>
-              TB - Monthly
+              {{forecasts[2].conditions | json}}
             </td>
             <td>
-              02/04/2012
+              {{forecasts[2].high | json}}
             </td>
             <td>
-              Declined
+              {{forecasts[2].low | json}}
             </td>
             <td>
-              02/04/2012
+              {{forecasts[2].precip | json}}
             </td>
             <td>
-              Declined
+              {{forecasts[2].humidity | json}}
             </td>
           </tr>
           <tr class="table-warning">
             <td>
-              3
+              {{forecasts[3].day | json}}
             </td>
             <td>
-              TB - Monthly
+              {{forecasts[3].conditions | json}}
             </td>
             <td>
-              03/04/2012
+              {{forecasts[3].high | json}}
             </td>
             <td>
-              Pending
+              {{forecasts[3].low | json}}
             </td>
             <td>
-              03/04/2012
+              {{forecasts[3].precip | json}}
             </td>
             <td>
-              Pending
+              {{forecasts[3].humidity | json}}
             </td>
           </tr>
           <tr class="table-danger">
             <td>
-              4
+              {{forecasts[4].day | json}}
             </td>
             <td>
-              TB - Monthly
+              {{forecasts[4].conditions | json}}
             </td>
             <td>
-              04/04/2012
+              {{forecasts[4].high | json}}
             </td>
             <td>
-              Call in to confirm
+              {{forecasts[4].low | json}}
             </td>
             <td>
-              04/04/2012
+              {{forecasts[4].precip | json}}
             </td>
             <td>
-              Call in to confirm
+              {{forecasts[4].humidity | json}}
+            </td>
+          </tr>
+          <tr class="table-success">
+            <td>
+              {{forecasts[5].day | json}}
+            </td>
+            <td>
+              {{forecasts[5].conditions | json}}
+            </td>
+            <td>
+              {{forecasts[5].high | json}}
+            </td>
+            <td>
+              {{forecasts[5].low | json}}
+            </td>
+            <td>
+              {{forecasts[5].precip | json}}
+            </td>
+            <td>
+              {{forecasts[5].humidity | json}}
             </td>
           </tr>
         </tbody>
