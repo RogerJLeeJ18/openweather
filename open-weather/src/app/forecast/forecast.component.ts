@@ -41,6 +41,7 @@ export class ForecastComponent implements OnInit {
       this.forecasterService
       .httpGetForecast(this.city)
       .subscribe(forecasts => {
+        console.log(forecasts)
         this.forecasts = forecasts;
       }),
       err => {

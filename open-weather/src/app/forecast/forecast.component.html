@@ -8,13 +8,13 @@
               Day
             </th>
             <th>
-              Conditions
+              avgCondition
             </th>
             <th>
-              High/Low
+              High
             </th>
             <th>
-              Precip
+              Low
             </th>
             <th>
               Wind
@@ -27,10 +27,10 @@
         <tbody>
           <tr>
             <td>
-              {{forecasts[0].day | json}}
+              Today
             </td>
             <td>
-              {{forecasts[0].conditions | json}}
+              {{forecasts[0].avgCondition | json}}
             </td>
             <td>
               {{forecasts[0].high | json}}
@@ -39,10 +39,10 @@
               {{forecasts[0].low | json}}
             </td>
             <td>
-              {{forecasts[0].precip | json}}
+              {{forecasts[0].avgWind | json}}
             </td>
             <td>
-              {{forecasts[0].humidity | json}}
+              {{forecasts[0].avgHumidity | json}}
             </td>
           </tr>
           <tr class="table-active">
@@ -50,7 +50,7 @@
               {{forecasts[1].day | json}}
             </td>
             <td>
-              {{forecasts[1].conditions | json}}
+              {{forecasts[1].avgCondition | json}}
             </td>
             <td>
               {{forecasts[1].high | json}}
@@ -59,10 +59,10 @@
               {{forecasts[1].low | json}}
             </td>
             <td>
-              {{forecasts[1].precip | json}}
+              {{forecasts[1].avgWind | json}}
             </td>
             <td>
-              {{forecasts[1].humidity | json}}
+              {{forecasts[1].avgHumidity | json}}
             </td>
           </tr>
           <tr class="table-success">
@@ -70,7 +70,7 @@
               {{forecasts[2].day | json}}
             </td>
             <td>
-              {{forecasts[2].conditions | json}}
+              {{forecasts[2].avgCondition | json}}
             </td>
             <td>
               {{forecasts[2].high | json}}
@@ -79,10 +79,10 @@
               {{forecasts[2].low | json}}
             </td>
             <td>
-              {{forecasts[2].precip | json}}
+              {{forecasts[2].avgWind | json}}
             </td>
             <td>
-              {{forecasts[2].humidity | json}}
+              {{forecasts[2].avgHumidity | json}}
             </td>
           </tr>
           <tr class="table-warning">
@@ -90,7 +90,7 @@
               {{forecasts[3].day | json}}
             </td>
             <td>
-              {{forecasts[3].conditions | json}}
+              {{forecasts[3].avgCondition | json}}
             </td>
             <td>
               {{forecasts[3].high | json}}
@@ -99,10 +99,10 @@
               {{forecasts[3].low | json}}
             </td>
             <td>
-              {{forecasts[3].precip | json}}
+              {{forecasts[3].avgWind | json}}
             </td>
             <td>
-              {{forecasts[3].humidity | json}}
+              {{forecasts[3].avgHumidity | json}}
             </td>
           </tr>
           <tr class="table-danger">
@@ -110,7 +110,7 @@
               {{forecasts[4].day | json}}
             </td>
             <td>
-              {{forecasts[4].conditions | json}}
+              {{forecasts[4].avgCondition | json}}
             </td>
             <td>
               {{forecasts[4].high | json}}
@@ -119,10 +119,10 @@
               {{forecasts[4].low | json}}
             </td>
             <td>
-              {{forecasts[4].precip | json}}
+              {{forecasts[4].avgWind | json}}
             </td>
             <td>
-              {{forecasts[4].humidity | json}}
+              {{forecasts[4].avgHumidity | json}}
             </td>
           </tr>
           <tr class="table-success">
@@ -130,7 +130,7 @@
               {{forecasts[5].day | json}}
             </td>
             <td>
-              {{forecasts[5].conditions | json}}
+              {{forecasts[5].avgCondition | json}}
             </td>
             <td>
               {{forecasts[5].high | json}}
@@ -139,10 +139,10 @@
               {{forecasts[5].low | json}}
             </td>
             <td>
-              {{forecasts[5].precip | json}}
+              {{forecasts[5].avgWind | json}}
             </td>
             <td>
-              {{forecasts[5].humidity | json}}
+              {{forecasts[5].avgHumidity | json}}
             </td>
           </tr>
         </tbody>
