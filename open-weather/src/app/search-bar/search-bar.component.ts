@@ -7,6 +7,7 @@ import {
 } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
@@ -19,11 +20,14 @@ export class SearchBarComponent implements OnInit {
   searchCity: string = 'New Orleans';
   constructor(private forecasterService: ForecasterService, private http: HttpClient) { }
  
-  // search(city: string): void {
-  //   this.searchTerms.next(city);
-  // }
+  search(city: string): void {
+    console.log(city)
+    
+  }
 
   ngOnInit() {
+
+    
     // this.forecast$ = this.searchTerms.pipe(
     //   // wait 300ms after each keystroke before considering the term
     //   debounceTime(300),

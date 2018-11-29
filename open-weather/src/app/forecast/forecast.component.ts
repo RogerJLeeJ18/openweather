@@ -19,17 +19,23 @@ export class ForecastComponent implements OnInit {
 
   constructor(private forecasterService: ForecasterService) {
     // this.testTitle = forecasterService.forecastData;
+    // this.forecasterService.fetchForecast("New Orleans")
+    //   .subscribe(data => {
+    //     console.log(data)
+    //     this.forecasts = data
+
+    //   })
     // console.log(forecasterService.forecastData)
   };
 
   ngOnInit() {
     // this.getForecast();
-    this.forecasterService.fetchForecast()
-      .subscribe(data => {
-        console.log(data)
-        this.forecasts = data
+    // this.forecasterService.fetchForecast("New Orleans")
+    //   .subscribe(data => {
+    //     console.log(data)
+    //     this.forecasts = data
         
-      })
+    //   })
   }
   // getForecast(): void {
   //   this.forecasterService.getForecast()

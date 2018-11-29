@@ -10,7 +10,7 @@ import { map, filter, switchMap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ForecasterService {
-  forecastData: any;
+  public forecasts = [];
   uri = 'http://localhost:4000';
   name: string = "hellloooooooooo"
   constructor(public http: HttpClient) {
@@ -23,8 +23,13 @@ export class ForecasterService {
   // public fetchForecast() {
   //   return this.http.get(`${this.uri}/forecast/`).pipe(map((res: Response) => res.json()))
   // }
-  public fetchForecast() {
-    return this.http.get<ForecastData[]>(`${this.uri}/forecast/`);
+  public fetchForecast(city) {
+    return this.http.get<ForecastData[]>(`${this.uri}/forecast/${city}`)
+      .subscribe(data => {
+        console.log(data)
+        this.forecasts = data
+
+      })
   }
   // getForecast() {
   //   let observable = new Observable<{ day: number, conditions: string, high: number, low: number, precip: string, wind: string, humidity: string, }>(observer => {
