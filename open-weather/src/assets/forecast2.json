@@ -1,0 +1,56 @@
+[
+  {
+    "day": 0,
+    "conditions": "clear skies",
+    "high": 89,
+    "low": 56,
+    "precip": "25% chance",
+    "wind": "gusty",
+    "humidity": "none"
+  },
+  {
+    "day": 1,
+    "conditions": "clear skies",
+    "high": 89,
+    "low": 56,
+    "precip": "25% chance",
+    "wind": "gusty",
+    "humidity": "none"
+  },
+  {
+    "day": 2,
+    "conditions": "clear skies",
+    "high": 89,
+    "low": 56,
+    "precip": "25% chance",
+    "wind": "gusty",
+    "humidity": "none"
+  },
+  {
+    "day": 3,
+    "conditions": "clear skies",
+    "high": 89,
+    "low": 56,
+    "precip": "25% chance",
+    "wind": "gusty",
+    "humidity": "none"
+  },
+  {
+    "day": 4,
+    "conditions": "clear skies",
+    "high": 89,
+    "low": 56,
+    "precip": "25% chance",
+    "wind": "gusty",
+    "humidity": "none"
+  },
+  {
+    "day": 5,
+    "conditions": "clear skies",
+    "high": 89,
+    "low": 56,
+    "precip": "25% chance",
+    "wind": "gusty",
+    "humidity": "none"
+  }
+]
