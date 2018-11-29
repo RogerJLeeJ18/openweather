@@ -17,12 +17,12 @@ router.route('/current').get((req, res) => {
 router.route('/forecast').get((req, res) => {
   axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${req.query.q}&APPID=${apiKey}`)
     .then((respo) => {
-      let currentWeather = cleanupCurrentWeather(respo.data)
+      let currentWeather = cleanupCurrentWeather(respo.data);
       axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${req.query.q}&APPID=${apiKey}`)
         .then((response) => {
           let forecastData = cleanupForecastData(response.data.list);
           let returnData = [];
-          returnData.push(currentWeather)
+          returnData.push(currentWeather);
           forecastData.forEach((obj) => returnData.push(obj));
           res.send(returnData);
         })

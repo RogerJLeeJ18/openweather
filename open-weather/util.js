@@ -5,17 +5,17 @@ const dayGrabber = (list, i) => {
 const separateDays = (list) => {
   let fiveBuckets = [];
   let bucket = [];
-  let currentDay = dayGrabber(list, 0);
-
+  let dayX = dayGrabber(list, 0);
   list.forEach((forecastObj, i) => {
-    if (dayGrabber(list, i) === currentDay) {
+    if (dayGrabber(list, i) === dayX) {
       bucket.push(list[i]);
     } else {
       fiveBuckets.push(bucket);
-      currentDay = dayGrabber(list, i);
+      dayX = dayGrabber(list, i);
       bucket = [list[i]];
     }
   });
+  fiveBuckets.push(bucket);
   return fiveBuckets;
 };
 
@@ -40,7 +40,9 @@ const getLowestLow = (list) => {
 
 const cleanupForecastData = (responseData) => {
   let avgDays = [];
+  
   separateDays(responseData).forEach((singleDayArray) => {
+    
     let avgCondition = getAvgCondition(singleDayArray.map((threeHourChunk) => threeHourChunk.weather[0].description));
     let avgHumidity = getAvgHumidity(singleDayArray.map((threeHourChunk) => threeHourChunk.main.humidity));
     let avgWind = getAvgHumidity(singleDayArray.map((threeHourChunk) => threeHourChunk.wind.speed));
@@ -54,16 +56,13 @@ const cleanupForecastData = (responseData) => {
 
 const cleanupCurrentWeather = (responseData) => {
   let currentWeather;
-  
   let conditions = responseData.weather[0].description;
   let humidity = responseData.main.humidity;
   let wind = Math.round(responseData.wind.speed);
   let high = tempConverter(responseData.main.temp_max);
   let low = tempConverter(responseData.main.temp_min);
   let currentTemp = tempConverter(responseData.main.temp);
-  
   currentWeather = { high, low, conditions, humidity, wind, currentTemp };
-  console.log(currentWeather);
   return currentWeather;
 };
 
