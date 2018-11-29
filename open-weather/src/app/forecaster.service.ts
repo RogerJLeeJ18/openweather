@@ -1,13 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, URLSearchParams } from '@angular/http';
-import { ForecastData } from './forecastdata';
-// import hello from '../assets/forecast.json';
+import { Http, URLSearchParams } from '@angular/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { map, filter, switchMap, catchError } from 'rxjs/operators';
-// import 'rxjs/add/operator/do';
-// import 'rxjs/add/operator/catch';
-// import 'rxjs/add/operator/map';
-
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,19 +11,16 @@ export class ForecasterService {
   private forecastSource = new BehaviorSubject<string>(null)
   forecast$ = this.forecastSource.asObservable();
   
-  changeSource(query: string){
-    this.forecastSource.next(query)
-    console.log(this.forecast$)
-    console.log(this.forecastSource)
+  changeCity(city: string){
+    this.forecastSource.next(city)
   }
 
   constructor(private http: Http) {
   }
   
-  search(query: any): Observable<any>{
+  httpGetForecast(city: any): Observable<any>{
     const search: URLSearchParams = new URLSearchParams();
-    search.set('q', query)
-    console.log({search}, "in searchcchch")
+    search.set('q', city)
     return this.http
     .get(this.forecastURL, {search})
     .pipe(map(data => data.json()))

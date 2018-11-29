@@ -12,36 +12,35 @@ export class ForecastComponent implements OnInit {
   forecasts: any;
   error: string;
   subscription: Subscription;
-  item: string;
+  city: string;
 
   constructor(private forecasterService: ForecasterService) {};
 
-  getQuery(){
+  
+  ngOnInit() {
+    this.getCity();
+  }
+  
+  getCity(){
     this.subscription = this.forecasterService.forecast$
     .subscribe(
-      item => {
-        if (item === null){
-          this.item = 'New Orleans'
+      city => {
+        if (city === null){
+          this.city = 'New Orleans'
         } else {
-          this.item = item
+          this.city = city
         }
-        this.searchFromForecast();
+        this.getForecast();
       },
       err => this.error = err
     )
   }
 
-  ngOnInit() {
-    this.getQuery();
-  }
-
-  searchFromForecast(){
-    console.log(this.item)
-    if(this.item){
+  getForecast(){
+    if(this.city){
       this.forecasterService
-      .search(this.item)
+      .httpGetForecast(this.city)
       .subscribe(forecasts => {
-        console.log(forecasts, "forecastsssss");
         this.forecasts = forecasts;
       }),
       err => {
@@ -50,6 +49,5 @@ export class ForecastComponent implements OnInit {
       } 
     }
   }
- 
 
 }
