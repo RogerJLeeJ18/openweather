@@ -4,7 +4,9 @@
       Open Weather
     </div>
     <div class="col-md-5">
-      <input #searchBox id="search-box" class="form-control" (keyup.enter)="search(searchBox.value)" />
+   
+        <input class="form-control" type="text" placeholder="search city" [(ngModel)]="query" (keyup.enter)="search()" />
+      
     </div>
     <div class="col-md-4">
     </div>

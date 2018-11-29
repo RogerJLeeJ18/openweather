@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ForecasterService } from '../forecaster.service';
-import { ForecastData } from '../forecastdata';
-import { Observable } from "rxjs"
-import { DATA } from "../mock-data"
+import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-forecast',
@@ -10,36 +8,48 @@ import { DATA } from "../mock-data"
   styleUrls: ['./forecast.component.css']
 })
 export class ForecastComponent implements OnInit {
-  // fiveDayForecast: Array<{ number: number, city: string, lowTemp: number }> = [];
-  // testTitle: object;
-  public forecasts = [];
-  // public users$: Observable<DATA[]>
+  
+  forecasts: any;
+  error: string;
+  subscription: Subscription;
+  item: string;
 
+  constructor(private forecasterService: ForecasterService) {};
 
-
-  constructor(private forecasterService: ForecasterService) {
-    // this.testTitle = forecasterService.forecastData;
-    // this.forecasterService.fetchForecast("New Orleans")
-    //   .subscribe(data => {
-    //     console.log(data)
-    //     this.forecasts = data
-
-    //   })
-    // console.log(forecasterService.forecastData)
-  };
+  getQuery(){
+    this.subscription = this.forecasterService.forecast$
+    .subscribe(
+      item => {
+        if (item === null){
+          this.item = 'New Orleans'
+        } else {
+          this.item = item
+        }
+        this.searchFromForecast();
+      },
+      err => this.error = err
+    )
+  }
 
   ngOnInit() {
-    // this.getForecast();
-    // this.forecasterService.fetchForecast("New Orleans")
-    //   .subscribe(data => {
-    //     console.log(data)
-    //     this.forecasts = data
-        
-    //   })
+    this.getQuery();
   }
-  // getForecast(): void {
-  //   this.forecasterService.getForecast()
-  //     .subscribe(forecastData => this.forecast = JSON.parse(forecastData));
-  // }
+
+  searchFromForecast(){
+    console.log(this.item)
+    if(this.item){
+      this.forecasterService
+      .search(this.item)
+      .subscribe(forecasts => {
+        console.log(forecasts, "forecastsssss");
+        this.forecasts = forecasts;
+      }),
+      err => {
+        console.log(err);
+        this.error=<any>err;
+      } 
+    }
+  }
+ 
 
 }

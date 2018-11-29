@@ -7,6 +7,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ForecasterService } from './forecaster.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    HttpModule
   ],
   providers: [ForecasterService],
   bootstrap: [AppComponent]
