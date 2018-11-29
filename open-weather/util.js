@@ -52,12 +52,27 @@ const cleanupForecastData = (responseData) => {
   return avgDays;
 };
 
+const cleanupCurrentWeather = (responseData) => {
+  let currentWeather;
+  
+  let conditions = responseData.weather[0].description;
+  let humidity = responseData.main.humidity;
+  let wind = Math.round(responseData.wind.speed);
+  let high = tempConverter(responseData.main.temp_max);
+  let low = tempConverter(responseData.main.temp_min);
+  let currentTemp = tempConverter(responseData.main.temp);
+  
+  currentWeather = { high, low, conditions, humidity, wind, currentTemp };
+  console.log(currentWeather);
+  return currentWeather;
+};
+
 const getDays = ()=> {
   const d = new Date();
   const i = d.getDay();
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"];
-  return days.slice(i, i + 5);
-}
+  return days.slice(i, i + 6);
+};
 
 const getAvgCondition = (arr) => {
   return arr.sort((a, b) => {
@@ -75,4 +90,4 @@ const getAvgHumidity = (list) => {
   return Math.round(sum / list.length);
 };
 
-module.exports = { cleanupForecastData };
+module.exports = { cleanupForecastData, cleanupCurrentWeather };

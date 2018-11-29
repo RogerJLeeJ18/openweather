@@ -1,0 +1,9 @@
+#currentWeather {
+  line-height: 100px;
+   min-height: 25px;
+} 
+
+#iconsForCurrentWeather {
+  line-height: 70px;
+   min-height: 25px; 
+} 

@@ -1,3 +1,4 @@
+{{forecasts | json}}
 <div *ngIf="forecasts" class="container-fluid">
   <div class="row">
     <div class="col-md-12">
@@ -8,13 +9,13 @@
               Day
             </th>
             <th>
-              avgCondition
+              Conditions
             </th>
             <th>
-              High
+              High Temp
             </th>
             <th>
-              Low
+              Low Temp
             </th>
             <th>
               Wind
@@ -24,27 +25,63 @@
             </th>
           </tr>
         </thead>
-        <tbody>
+        <!-- <thead id="iconsForCurrentWeather">
+          <tr>
+            <td>
+              
+            </td>
+            <td>
+              icon
+            </td>
+            <td>
+              icon
+            </td>
+            <td>
+              icon
+            </td>
+            <td>
+              icon
+            </td>
+            <td>
+              icon
+            </td>
+          </tr>
+        </thead> -->
+          <thead id="currentWeather">
+            
           <tr>
             <td>
               Today
             </td>
             <td>
-              {{forecasts[0].avgCondition}}
+              Currently {{forecasts[0].currentTemp}}
+              <br>
+              {{forecasts[0].conditions}}
             </td>
             <td>
+              <i class="material-icons">wb_sunny</i>
+              <br>
               {{forecasts[0].high}}
             </td>
             <td>
+              <i class="material-icons">wb_cloudy</i>
+              <br>
               {{forecasts[0].low}}
             </td>
             <td>
-              {{forecasts[0].avgWind}}
+              <i class="material-icons">wb_sunny</i>
+              <br>
+              {{forecasts[0].wind}}
             </td>
             <td>
-              {{forecasts[0].avgHumidity}}
+              <i class="material-icons">wb_cloudy</i>
+              {{forecasts[0].humidity}}
             </td>
           </tr>
+          </thead>
+        
+        <thead>
+          <tbody>
           <tr class="table-active">
             <td>
               {{forecasts[1].day[1]}}
