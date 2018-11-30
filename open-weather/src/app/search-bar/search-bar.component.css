@@ -3,14 +3,12 @@
   color: gray;
   text-align: bottom;
 }
-
 .border {
   padding: 5px;
   border-style: solid;
   text-align: center;
   background-color: rgb(211, 213, 214);
 }
-
 #titleIcon {
   height: 38px;
   border-radius: 10%;

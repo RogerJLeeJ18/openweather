@@ -16,7 +16,6 @@ export class ForecastComponent implements OnInit {
 
   constructor(private forecasterService: ForecasterService) {};
 
-  
   ngOnInit() {
     this.getCity();
   }
@@ -50,5 +49,5 @@ export class ForecastComponent implements OnInit {
       } 
     }
   }
-
 }
+

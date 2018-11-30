@@ -1,24 +1,20 @@
 #currentWeather {
   line-height: 60px;
-   min-height: 35px;
-   height: 35px;
+  min-height: 35px;
+  height: 35px;
 } 
 #today {
   font-size: 27px;
 } 
-
 th{
   color: gray;
 } 
-
 .material-icons { 
     font-size: 15px; 
 }
-
 .forecastToday {
   background-color: rgb(211, 213, 214);
 }
-
 .forecastTable {
   background-color: rgb(162, 193, 206);
 }

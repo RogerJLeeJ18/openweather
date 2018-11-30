@@ -24,17 +24,15 @@
             </th>
           </tr>
         </thead>
-          <thead id="currentWeather" class="forecastToday">
+        <thead id="currentWeather" class="forecastToday">
           <tr>
             <td id="today">
               Today
               <br>
               <br>
               Now {{forecasts[0].currentTemp}}° F
-            
             </td>
             <td>
-              
               <br>
               <div *ngIf="forecasts[0].conditions.includes('rain')">
                 {{forecasts[0].conditions}}
@@ -48,20 +46,16 @@
                 {{forecasts[0].conditions}}
                 <i class="material-icons">wb_cloudy</i>
               </div>
-              
             </td>
             <td>
-              
               <br>
               {{forecasts[0].high}}° F
             </td>
             <td>
-              
               <br>
               {{forecasts[0].low}}° F
             </td>
             <td>
-              
               <br>
               {{forecasts[0].wind}} mph
             </td>
@@ -70,10 +64,9 @@
               {{forecasts[0].humidity}}%
             </td>
           </tr>
-          </thead>
-        
+        </thead>
         <thead id="forecastRow">
-          <tbody>
+        <tbody>
           <tr class="forecastTable">
             <td>
               {{forecasts[1].day[1]}}
@@ -109,8 +102,7 @@
             <td>
               {{forecasts[2].day[2]}}
             </td>
-            <td>
-              
+            <td> 
               <div *ngIf="forecasts[2].avgCondition.includes('rain')">
                 {{forecasts[2].avgCondition}}
                 <i class="material-icons">beach_access</i>
@@ -142,7 +134,6 @@
               {{forecasts[3].day[3]}}
             </td>
             <td>
-              
               <div *ngIf="forecasts[3].avgCondition.includes('rain')">
                 {{forecasts[3].avgCondition}}
                 <i class="material-icons">beach_access</i>
@@ -174,7 +165,6 @@
               {{forecasts[4].day[4]}}
             </td>
             <td>
-              
               <div *ngIf="forecasts[4].avgCondition.includes('rain')">
                 {{forecasts[4].avgCondition}}
                 <i class="material-icons">beach_access</i>
@@ -206,7 +196,6 @@
               {{forecasts[5].day[5]}}
             </td>
             <td>
-              
               <div *ngIf="forecasts[5].avgCondition.includes('rain')">
                 {{forecasts[5].avgCondition}}
                 <i class="material-icons">beach_access</i>
