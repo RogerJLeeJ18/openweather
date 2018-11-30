@@ -1,19 +1,10 @@
+Start app by running npm start
+
 Overview 
 
   Build an application that communicates with the ​Open Weather Map API​ in order to 
   provide the weather forcast for a given city. The weather forecast for the current day, as 
-  well as a 5 day forecast, should be available via a UI. The design/style of the UI is up to you. 
-
-Goals 
-
-1. Pull current weather data for a given city. 
-2. Pull 5 day forecast data for a given city. 
-3. Build a UI that allows users to input a city and see the current weather as well as a 5 
-    day forecast
-
-search bar
-current weather
-forecast
+  well as a 5 day forecast, are available via a UI.
 
 # OpenWeather
 
