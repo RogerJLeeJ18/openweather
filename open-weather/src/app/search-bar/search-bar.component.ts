@@ -9,12 +9,14 @@ import { ForecasterService } from '../forecaster.service';
 
 export class SearchBarComponent implements OnInit {
   
-  city: string
+  city: string;
+  titleCity: string = "New Orleans"
 
   constructor(private forecasterService: ForecasterService) { }
  
   search() {
     this.forecasterService.changeCity(this.city);
+    this.titleCity = this.city;
     this.city = "";
   }
 

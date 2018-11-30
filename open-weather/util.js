@@ -22,27 +22,17 @@ const separateDays = (list) => {
 const tempConverter = (tempKel) => Math.round((Number(tempKel - 273.15)) * 9 / 5 + 32);
 
 const getHighestHigh = (list) => {
-  let high;
-  list.forEach((temp) => {
-    if (!high || high < temp) { high = temp; }
-  });
-  return tempConverter(high);
+  return tempConverter(list.sort()[list.length - 1]);
 };
 
 const getLowestLow = (list) => {
-  let low;
-  list.forEach((temp) => {
-    if (!low || low < temp) { low = temp; }
-  });
-  return tempConverter(low);
+  return tempConverter(list.sort()[0]);
 };
-
 
 const cleanupForecastData = (responseData) => {
   let avgDays = [];
   
   separateDays(responseData).forEach((singleDayArray) => {
-    
     let avgCondition = getAvgCondition(singleDayArray.map((threeHourChunk) => threeHourChunk.weather[0].description));
     let avgHumidity = getAvgHumidity(singleDayArray.map((threeHourChunk) => threeHourChunk.main.humidity));
     let avgWind = getAvgHumidity(singleDayArray.map((threeHourChunk) => threeHourChunk.wind.speed));

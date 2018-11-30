@@ -2,13 +2,13 @@
   <div class="row">
     <div class="col-md-12">
       <table class="table table-bordered">
-        <thead>
+        <thead >
           <tr>
             <th>
               Day
             </th>
             <th>
-              Conditions
+              Condtions
             </th>
             <th>
               High Temp
@@ -24,161 +24,213 @@
             </th>
           </tr>
         </thead>
-        <!-- <thead id="iconsForCurrentWeather">
+          <thead id="currentWeather" class="forecastToday">
           <tr>
+            <td id="today">
+              Today
+              <br>
+              <br>
+              Now {{forecasts[0].currentTemp}}° F
+            
+            </td>
             <td>
+              
+              <br>
+              <div *ngIf="forecasts[0].conditions.includes('rain')">
+                {{forecasts[0].conditions}}
+                <i class="material-icons">beach_access</i>
+              </div>
+              <div *ngIf="forecasts[0].conditions.includes('sun') || forecasts[0].conditions.includes('clear')">
+                {{forecasts[0].conditions}}
+                <i class="material-icons">wb_sunny</i>
+              </div>
+              <div *ngIf="forecasts[0].conditions.includes('cloud')">
+                {{forecasts[0].conditions}}
+                <i class="material-icons">wb_cloudy</i>
+              </div>
               
             </td>
             <td>
-              icon
-            </td>
-            <td>
-              icon
-            </td>
-            <td>
-              icon
-            </td>
-            <td>
-              icon
-            </td>
-            <td>
-              icon
-            </td>
-          </tr>
-        </thead> -->
-          <thead id="currentWeather">
-            
-          <tr>
-            <td>
-              Today
-            </td>
-            <td>
-              Currently {{forecasts[0].currentTemp}}
+              
               <br>
-              {{forecasts[0].conditions}}
+              {{forecasts[0].high}}° F
             </td>
             <td>
-              <i class="material-icons">wb_sunny</i>
+              
               <br>
-              {{forecasts[0].high}}
+              {{forecasts[0].low}}° F
             </td>
             <td>
-              <i class="material-icons">wb_cloudy</i>
+              
               <br>
-              {{forecasts[0].low}}
+              {{forecasts[0].wind}} mph
             </td>
             <td>
-              <i class="material-icons">wb_sunny</i>
               <br>
-              {{forecasts[0].wind}}
-            </td>
-            <td>
-              <i class="material-icons">wb_cloudy</i>
-              {{forecasts[0].humidity}}
+              {{forecasts[0].humidity}}%
             </td>
           </tr>
           </thead>
         
-        <thead>
+        <thead id="forecastRow">
           <tbody>
-          <tr class="table-active">
+          <tr class="forecastTable">
             <td>
               {{forecasts[1].day[1]}}
             </td>
             <td>
-              {{forecasts[1].avgCondition}}
+              <div *ngIf="forecasts[1].avgCondition.includes('rain')">
+                {{forecasts[1].avgCondition}}
+                <i class="material-icons">beach_access</i>
+              </div>
+              <div *ngIf="forecasts[1].avgCondition.includes('sun') || forecasts[1].avgCondition.includes('clear')">
+                {{forecasts[1].avgCondition}}
+                <i class="material-icons">wb_sunny</i>
+              </div>
+              <div *ngIf="forecasts[1].avgCondition.includes('cloud')">
+                {{forecasts[1].avgCondition}}
+                <i class="material-icons">wb_cloudy</i>
+              </div>
             </td>
             <td>
-              {{forecasts[1].high}}
+              {{forecasts[1].high}}° F
             </td>
             <td>
-              {{forecasts[1].low}}
+              {{forecasts[1].low}}° F
             </td>
             <td>
-              {{forecasts[1].avgWind}}
+              {{forecasts[1].avgWind}} mph
             </td>
             <td>
-              {{forecasts[1].avgHumidity}}
+              {{forecasts[1].avgHumidity}}%
             </td>
           </tr>
-          <tr class="table-success">
+          <tr class="forecastTable2">
             <td>
               {{forecasts[2].day[2]}}
             </td>
             <td>
-              {{forecasts[2].avgCondition}}
+              
+              <div *ngIf="forecasts[2].avgCondition.includes('rain')">
+                {{forecasts[2].avgCondition}}
+                <i class="material-icons">beach_access</i>
+              </div>
+              <div *ngIf="forecasts[2].avgCondition.includes('sun') || forecasts[2].avgCondition.includes('clear')">
+                {{forecasts[2].avgCondition}}
+                <i class="material-icons">wb_sunny</i>
+              </div>
+              <div *ngIf="forecasts[2].avgCondition.includes('cloud')">
+                {{forecasts[2].avgCondition}}
+                <i class="material-icons">wb_cloudy</i>
+              </div>
             </td>
             <td>
-              {{forecasts[2].high}}
+              {{forecasts[2].high}}° F
             </td>
             <td>
-              {{forecasts[2].low}}
+              {{forecasts[2].low}}° F
             </td>
             <td>
-              {{forecasts[2].avgWind}}
+              {{forecasts[2].avgWind}} mph
             </td>
             <td>
-              {{forecasts[2].avgHumidity}}
+              {{forecasts[2].avgHumidity}}%
             </td>
           </tr>
-          <tr class="table-warning">
+          <tr class="forecastTable3">
             <td>
               {{forecasts[3].day[3]}}
             </td>
             <td>
-              {{forecasts[3].avgCondition}}
+              
+              <div *ngIf="forecasts[3].avgCondition.includes('rain')">
+                {{forecasts[3].avgCondition}}
+                <i class="material-icons">beach_access</i>
+              </div>
+              <div *ngIf="forecasts[3].avgCondition.includes('sun') || forecasts[3].avgCondition.includes('clear')">
+                {{forecasts[3].avgCondition}}
+                <i class="material-icons">wb_sunny</i>
+              </div>
+              <div *ngIf="forecasts[3].avgCondition.includes('cloud')">
+                {{forecasts[3].avgCondition}}
+                <i class="material-icons">wb_cloudy</i>
+              </div>
             </td>
             <td>
-              {{forecasts[3].high}}
+              {{forecasts[3].high}}° F
             </td>
             <td>
-              {{forecasts[3].low}}
+              {{forecasts[3].low}}° F
             </td>
             <td>
-              {{forecasts[3].avgWind}}
+              {{forecasts[3].avgWind}} mph
             </td>
             <td>
-              {{forecasts[3].avgHumidity}}
+              {{forecasts[3].avgHumidity}}%
             </td>
           </tr>
-          <tr class="table-danger">
+          <tr class="forecastTable4">
             <td>
               {{forecasts[4].day[4]}}
             </td>
             <td>
-              {{forecasts[4].avgCondition}}
+              
+              <div *ngIf="forecasts[4].avgCondition.includes('rain')">
+                {{forecasts[4].avgCondition}}
+                <i class="material-icons">beach_access</i>
+              </div>
+              <div *ngIf="forecasts[4].avgCondition.includes('sun') || forecasts[4].avgCondition.includes('clear')">
+                {{forecasts[4].avgCondition}}
+                <i class="material-icons">wb_sunny</i>
+              </div>
+              <div *ngIf="forecasts[4].avgCondition.includes('cloud')">
+                {{forecasts[4].avgCondition}}
+                <i class="material-icons">wb_cloudy</i>
+              </div>
             </td>
             <td>
-              {{forecasts[4].high}}
+              {{forecasts[4].high}}° F
             </td>
             <td>
-              {{forecasts[4].low}}
+              {{forecasts[4].low}}° F
             </td>
             <td>
-              {{forecasts[4].avgWind}}
+              {{forecasts[4].avgWind}} mph
             </td>
             <td>
-              {{forecasts[4].avgHumidity}}
+              {{forecasts[4].avgHumidity}}%
             </td>
           </tr>
-          <tr class="table-success">
+          <tr class="forecastTable5">
             <td>
               {{forecasts[5].day[5]}}
             </td>
             <td>
-              {{forecasts[5].avgCondition}}
+              
+              <div *ngIf="forecasts[5].avgCondition.includes('rain')">
+                {{forecasts[5].avgCondition}}
+                <i class="material-icons">beach_access</i>
+              </div>
+              <div *ngIf="forecasts[5].avgCondition.includes('sun') || forecasts[5].avgCondition.includes('clear')">
+                {{forecasts[5].avgCondition}}
+                <i class="material-icons">wb_sunny</i>
+              </div>
+              <div *ngIf="forecasts[5].avgCondition.includes('cloud')">
+                {{forecasts[5].avgCondition}}
+                <i class="material-icons">wb_cloudy</i>
+              </div>
             </td>
             <td>
-              {{forecasts[5].high}}
+              {{forecasts[5].high}}° F
             </td>
             <td>
-              {{forecasts[5].low}}
+              {{forecasts[5].low}}° F
             </td>
             <td>
-              {{forecasts[5].avgWind}}
+              {{forecasts[5].avgWind}} mph
             </td>
             <td>
-              {{forecasts[5].avgHumidity}}
+              {{forecasts[5].avgHumidity}}%
             </td>
           </tr>
         </tbody>

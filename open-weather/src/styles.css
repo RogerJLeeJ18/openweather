@@ -20,6 +20,12 @@ body, input[type="text"], button {
 /* everywhere else */
 * {
   font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+tr {
+   line-height: 15px;
+   min-height: 15px;
+   height: 15px;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
