@@ -77,8 +77,4 @@ const getAvgHumidity = (list) => {
   return Math.round(sum / list.length);
 };
 
-module.exports = {
-  apiKey: 'dcb1aac1b716c4eb71246c10bfb700ec'
-};
-
 module.exports = { cleanupForecastData, cleanupCurrentWeather };
