@@ -3,3 +3,8 @@
   color: gray;
   text-align: bottom;
 }
+
+#titleIcon {
+  height: 38px;
+  border-radius: 10%;
+}

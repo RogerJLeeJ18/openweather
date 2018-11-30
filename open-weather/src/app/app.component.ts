@@ -7,7 +7,7 @@ import { ForecasterService } from './forecaster.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'open-weather';
+  title = 'Weather Up';
   constructor(private forecasterService: ForecasterService) { }
   
 }
