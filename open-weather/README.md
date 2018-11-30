@@ -1,6 +1,6 @@
 Start app by running npm start
 
-Overview 
+ 
 
   An application that communicates with the ​Open Weather Map API​ in order to 
   provide the weather forcast for a given city. The weather forecast for the current day, as 
