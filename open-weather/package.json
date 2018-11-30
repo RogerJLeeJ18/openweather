@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "babel-watch server.js",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve | babel-watch server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
