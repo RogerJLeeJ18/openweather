@@ -2,7 +2,7 @@ Start app by running npm start
 
 Overview 
 
-  Build an application that communicates with the ​Open Weather Map API​ in order to 
+  An application that communicates with the ​Open Weather Map API​ in order to 
   provide the weather forcast for a given city. The weather forecast for the current day, as 
   well as a 5 day forecast, are available via a UI.
 
